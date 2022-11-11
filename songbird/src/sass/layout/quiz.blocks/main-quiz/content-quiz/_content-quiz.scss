@@ -1,0 +1,8 @@
+@use '../../../../modules/colors' as *;
+
+.content-quiz {
+    // width: 1345px;
+    width: 100%;
+    background: $main-gray;
+    border-radius: 30px;
+}

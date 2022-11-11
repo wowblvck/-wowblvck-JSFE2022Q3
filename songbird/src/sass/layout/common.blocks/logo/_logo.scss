@@ -1,0 +1,6 @@
+@use '../../../modules/mixins' as mix;
+
+.logo {
+    @include mix.font('Cherry Bomb', 80px, 400);
+    color: #fff;
+}

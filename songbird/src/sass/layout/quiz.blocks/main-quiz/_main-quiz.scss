@@ -1,0 +1,12 @@
+@forward '../../common.blocks/logo/logo';
+
+@forward './steps-quiz/steps-quiz';
+@forward './sidebox-quiz/sidebox-quiz';
+@forward './match-quiz/match-quiz';
+@forward './content-quiz/content-quiz';
+
+.main-quiz {
+    display: flex;
+    padding: 0 60px;
+    column-gap: 20px;
+}

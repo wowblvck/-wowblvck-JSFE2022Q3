@@ -1,0 +1,18 @@
+@forward './__item/steps-quiz__item';
+@forward './__item/_active/steps-quiz__item_active';
+
+@use '../../../../modules/colors' as *;
+
+.steps-quiz {
+    background: $main-gray;
+    border-radius: 30px;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 36px;
+    width: 100%;
+    height: 880px;
+}

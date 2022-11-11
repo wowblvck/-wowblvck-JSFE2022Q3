@@ -1,0 +1,6 @@
+@use '../../../../modules/colors' as *;
+
+.score-quiz__count {
+    color: $main-white;
+    margin-left: 24px;
+}

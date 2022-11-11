@@ -1,0 +1,10 @@
+@use '../../../modules/mixins' as mix;
+
+@forward './__count/score-quiz__count';
+
+.score-quiz {
+    @include mix.font('Rubik One', 50px, 400);
+    color: #e0b67c;
+    margin: 0;
+    text-align: right;
+}

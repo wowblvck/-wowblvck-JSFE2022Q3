@@ -1,0 +1,12 @@
+@use '../../../../../modules/mixins' as mix;
+@use '../../../../../modules/colors' as *;
+
+.steps-quiz__item {
+    @include mix.font('Rubik One', 35px, 400);
+    color: $main-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 328px;
+    height: 100px;
+}
