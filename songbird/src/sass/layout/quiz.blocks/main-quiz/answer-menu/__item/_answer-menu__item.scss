@@ -1,0 +1,19 @@
+@use '../../../../../modules/mixins' as mix;
+@use '../../../../../modules/colors' as *;
+
+.answer-menu__item {
+    @include mix.font('Rubik One', 30px, 400);
+    background: $main-yellow;
+    color: $main-blue;
+    width: 523px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    transition: all 0.3s;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+    }
+}

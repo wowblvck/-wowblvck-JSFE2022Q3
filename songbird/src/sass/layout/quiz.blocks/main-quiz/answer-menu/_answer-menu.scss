@@ -1,0 +1,12 @@
+@forward './__item/answer-menu__item';
+@forward './__item/_wrong/answer-menu__item_wrong';
+@forward './__item/_success/answer-menu__item_success';
+
+.answer-menu {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    row-gap: 20px;
+    margin: 0;
+}

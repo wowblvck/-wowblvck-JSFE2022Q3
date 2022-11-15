@@ -1,0 +1,8 @@
+@forward './__current/answer-time__current';
+@forward './__duration/answer-time__duration';
+
+.answer-time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+}

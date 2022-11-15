@@ -1,4 +1,4 @@
-import home from "../pages/home";
+// import home from "../pages/home";
 import quiz from "../pages/quiz";
 import score from "../pages/score";
 
@@ -8,7 +8,7 @@ const routes = {
     "/score": { name: "score", title: "Результаты", render: score },
 };
 
-function router() {
+export const router = () => {
     let view = routes[location.pathname];
 
     if (view) {
@@ -29,7 +29,3 @@ function router() {
 //         router();
 //     }
 // });
-
-// // Update router
-window.addEventListener("popstate", router);
-window.addEventListener("DOMContentLoaded", router);

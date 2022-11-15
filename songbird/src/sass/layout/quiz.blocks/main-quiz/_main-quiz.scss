@@ -4,6 +4,19 @@
 @forward './sidebox-quiz/sidebox-quiz';
 @forward './match-quiz/match-quiz';
 @forward './content-quiz/content-quiz';
+@forward './player-quiz/player-quiz';
+@forward './player-control/player-control';
+@forward './answer-quiz/answer-quiz';
+@forward './answer-menu/answer-menu';
+
+@forward './answer-content/answer-content';
+@forward './answer-content/_wrong/answer-content_wrong';
+@forward './answer-content/_success/answer-content_success';
+
+@forward './answer-player/answer-player';
+@forward './answer-progress/answer-progress';
+@forward './answer-time/answer-time';
+@forward './next-level/next-level';
 
 .main-quiz {
     display: flex;

@@ -1,0 +1,9 @@
+@forward './__title/player-quiz__title';
+@forward './__player-control/player-quiz__player-control';
+
+.player-quiz {
+    display: flex;
+    flex-direction: column;
+    width: 821px;
+    align-self: end;
+}

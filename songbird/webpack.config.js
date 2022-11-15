@@ -13,7 +13,10 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
     filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[name][ext]'
+    assetModuleFilename: pathData => {
+      const filepath = path.dirname(pathData.filename).split('/').slice(1).join('/');
+      return `${filepath}/[name][ext]`;
+    }
   },
   devServer: {
     open: true,
@@ -36,10 +39,10 @@ const config = {
         test: /\.m?js$/i,
         exclude: /(node_modules|bower_components)/,
         use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env']
-            }
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
       },
       {
@@ -49,46 +52,37 @@ const config = {
       {
         test: /\.(eot|ttf|woff|woff2)$/i,
         type: "asset/resource",
-        generator: {
-          filename: 'assets/fonts/[name][ext]'
-        }
       },
       {
         test: /\.(png|jpe?g|gif|webp|svg)$/i,
         use: [
-            {
-                loader: 'image-webpack-loader',
-                options: {
-                    mozjpeg: {
-                      progressive: true,
-                    },
-                    optipng: {
-                      enabled: false,
-                    },
-                    pngquant: {
-                      quality: [0.65, 0.90],
-                      speed: 4
-                    },
-                    gifsicle: {
-                      interlaced: false,
-                    },
-                    webp: {
-                      quality: 75
-                    }
-                }
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75
+              }
             }
+          }
         ],
         type: 'asset/resource',
-        generator: {
-          filename: 'assets/images/[name][ext]'
-        }
       },
       {
         test: /\.(mp3|wav|aac)$/i,
         type: 'asset/resource',
-        generator: {
-          filename: 'assets/sounds/[name][ext]'
-        }
       },
     ],
   },
@@ -110,7 +104,6 @@ module.exports = () => {
     config.mode = "development";
     config.target = 'web';
     config.devtool = 'source-map';
-    config.output.clean = true;
   }
   return config;
 };

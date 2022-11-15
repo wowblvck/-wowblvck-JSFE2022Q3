@@ -1,0 +1,9 @@
+@use '../../../../../modules/mixins' as mix;
+@use '../../../../../modules/colors' as *;
+
+.next-level__title {
+    @include mix.font('Rubik One', 50px, 400);
+    color: $main-yellow;
+    margin: 0;
+    display: inline;
+}

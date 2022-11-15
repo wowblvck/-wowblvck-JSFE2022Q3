@@ -1,0 +1,7 @@
+@forward './__bar/player-control__bar';
+@forward './__state/player-control__state';
+
+.player-control {
+    display: flex;
+    align-items: center;
+}

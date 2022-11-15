@@ -1,8 +1,16 @@
 @use '../../../../modules/colors' as *;
 
+@forward './__image/content-quiz__image';
+@forward './__player-quiz/content-quiz__player-quiz';
+@forward './__answer-quiz/content-quiz__answer-quiz';
+@forward './__next-level/content-quiz__next-level';
+
 .content-quiz {
-    // width: 1345px;
     width: 100%;
     background: $main-gray;
     border-radius: 30px;
+    position: relative;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
 }

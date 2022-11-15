@@ -1,0 +1,17 @@
+@forward './__title/answer-content__title';
+@forward './__subtitle/answer-content__subtitle';
+@forward './__description/answer-content__description';
+@forward './__answer-player/answer-content__answer-player';
+@forward './__icon/answer-content__icon';
+@forward './__select/answer-content__select';
+
+@use '../../../../modules/colors' as *;
+
+.answer-content {
+    width: 100%;
+    border-radius: 30px;
+    padding: 33px 36px 56px 38px;
+    position: relative;
+    background: $main-yellow;
+    margin-left: 40px;
+}

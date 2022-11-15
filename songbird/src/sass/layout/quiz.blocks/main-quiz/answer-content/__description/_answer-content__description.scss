@@ -1,0 +1,14 @@
+@use '../../../../../modules/mixins' as mix;
+
+.answer-content__description {
+    @include mix.font('Rubik', 25px, 500);
+    color: #fff;
+    margin: 0;
+    margin-top: 11px;
+    overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    line-height: 30px;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
+}

@@ -1,0 +1,8 @@
+@use '../../../../../modules/colors' as *;
+@use '../../../../../modules/mixins' as mix;
+
+.answer-content__select {
+    @include mix.font('Rubik', 25px, 500);
+    color: $main-blue;
+    margin: 0;
+}
