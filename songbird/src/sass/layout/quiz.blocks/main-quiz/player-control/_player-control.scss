@@ -1,5 +1,6 @@
 @forward './__bar/player-control__bar';
 @forward './__state/player-control__state';
+@forward './__state/_pause/player-control__state_pause';
 
 .player-control {
     display: flex;

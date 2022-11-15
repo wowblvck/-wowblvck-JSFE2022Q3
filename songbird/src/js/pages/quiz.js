@@ -28,6 +28,8 @@ export default () => `
                     <input 
                         type="range" 
                         class="player-control__bar"
+                        min="0"
+                        value="0"
                     />
                 </div>
             </div>

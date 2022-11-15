@@ -6,22 +6,28 @@ const createNode = (element, ...classes) => {
     return node;
 };
 
-const shuffle = (array) => {
-    let currentIndex = array.length,  randomIndex;
-  
-    while (currentIndex != 0) {
-  
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-  
-    return array;
+const shuffle = (arr) => {
+	var j, temp;
+	for(var i = arr.length - 1; i > 0; i--){
+		j = Math.floor(Math.random()*(i + 1));
+		temp = arr[j];
+		arr[j] = arr[i];
+		arr[i] = temp;
+	}
+	return arr;
+}
+
+const getRandomArrayElement = (arr) => {
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+const getArrayElementById = (arr, id) => {
+  return arr.find(item => item.id == id);
 }
 
 export {
     createNode,
-    shuffle
+    shuffle,
+    getRandomArrayElement,
+    getArrayElementById
 }
