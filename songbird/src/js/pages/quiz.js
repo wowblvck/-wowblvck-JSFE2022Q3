@@ -1,6 +1,5 @@
 import nextLevelIcon from '../../assets/icons/next-level.svg';
 import defaultBirdImage from '../../assets/images/default-bird.png';
-// import birdImage from '../../assets/images/bird-image.png';
 
 export default () => `
     <header class="header-quiz page-quiz__header">
@@ -47,14 +46,6 @@ export default () => `
         </section>
     </main>
 `;
-
-
-{/* <li class="answer-menu__item"><span>Ворон</span></li>
-<li class="answer-menu__item"><span>Журавль</span></li>
-<li class="answer-menu__item"><span>Ласточка</span></li>
-<li class="answer-menu__item"><span>Козодой</span></li>
-<li class="answer-menu__item"><span>Кукушка</span></li>
-<li class="answer-menu__item"><span>Синица</span></li> */}
 
 //Content for answer-content
 {/* <img class="answer-content__icon" src=${birdImage} alt="Bird Icon">

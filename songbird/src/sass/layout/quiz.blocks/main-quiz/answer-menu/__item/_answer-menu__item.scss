@@ -12,9 +12,11 @@
     align-items: center;
     border-radius: 30px;
     cursor: pointer;
+    span {
+        transition: transform 0.3s;
+    }
     &:hover {
         span {
-            transition: transform 0.3s;
             transform: scale(1.2);
         }
     }
