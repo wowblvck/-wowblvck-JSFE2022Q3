@@ -5,15 +5,16 @@
     @include mix.font('Rubik One', 30px, 400);
     background: $main-yellow;
     color: $main-blue;
-    width: 523px;
+    width: 410px;
     height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
     cursor: pointer;
+    transition: all .3s;
     span {
-        transition: transform 0.3s;
+        transition: all .3s;
     }
     &:hover {
         span {

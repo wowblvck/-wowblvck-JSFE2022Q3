@@ -10,7 +10,7 @@ import Sound from '../components/quiz-player';
 import wrongSound from '../../assets/sounds/wrong.wav';
 import successSound from '../../assets/sounds/success.wav';
 
-let maxScore = 0;
+export let maxScore = 0;
 export default class Quiz {
 
     constructor(level) {
@@ -25,6 +25,8 @@ export default class Quiz {
         this.match();
 
         this.eventHandlers();
+
+        this.sound = new Sound(this.getLevel(), this.getElementById());
     }
 
     match = () => {
@@ -43,12 +45,8 @@ export default class Quiz {
 
         //Output random ID of bird
         this.currentId = getRandomArrayElement(birds[this.getLevel()]).id;
-        this.addAudio();
     }
 
-    addAudio = () => {
-        new Sound(this.getLevel(), this.getElementById());
-    }
 
     eventHandlers = () => {
         const answerMenu = document.querySelector('.answer-menu');
@@ -57,12 +55,12 @@ export default class Quiz {
 
     selectElement = (e) => {
 
-        let answerContent = document.querySelector('.answer-content');
-        answerContent.replaceWith(answerContent.cloneNode(false));
-
         let el = e.target;
 
         if (el.tagName != "UL") {
+            let answerContent = document.querySelector('.answer-content');
+            answerContent.replaceWith(answerContent.cloneNode(false));
+
             if (el.tagName == "SPAN") el = el.parentNode;
 
             //Fill box content depending on the chosen element
@@ -94,66 +92,49 @@ export default class Quiz {
             //Get nodes of list elements
             const children = e.currentTarget.childNodes;
 
-            //Check if quiz not completed (no chosen successful element)
-            if (this.complete == false) {
+            //Remove resize modifier if select another element
+            for (let i = 1; i < children.length; i++) children[i].classList.remove('answer-menu__item_active');
 
-                //Check if selected element first or last in list, give content box topLeft and bottomLeft radius is null (0)
-                if(el == children[1]) {
-                    answerContent.style.borderTopLeftRadius = '0';
-                } else if (el == children[children.length - 1]) {
-                    answerContent.style.borderBottomLeftRadius = '0';
-                }
+            //Set content box radius if select first or last elements
+            if (el == children[1]) {
+                answerContent.style.borderTopLeftRadius = '0';
+                answerContent.style.borderBottomLeftRadius = '30px';
+            } else if (el == children[children.length - 1]) {
+                answerContent.style.borderTopLeftRadius = '30px';
+                answerContent.style.borderBottomLeftRadius = '0';
+            } else {
+                answerContent.style.borderRadius = '30px';
+            }
 
-                //Check ID select element according to random ID generate in match()
-                if ((dataId == this.currentId)) {
-
-                    //If score rating < 1 give score rating is null (0)
+            if ((dataId == this.currentId)) {
+                if (this.complete == false) {
+                    this.success.play();
                     if (this.currentScore < 1) this.currentScore = 0;
                     maxScore += this.currentScore;
                     const scoreCount = document.querySelector('.score-quiz__count');
                     scoreCount.innerHTML = maxScore;
-
-                    //Set borderRadius content box if selected elements not first or last
-                    if (el != children[1] || el != children[children.length - 1]) {
-                        answerContent.style.borderRadius = '30px';
-                    }
-
-                    //If selected element first or last set borderRadius is null (0)
-                    if (el == children[1]) {
-                        answerContent.style.borderTopLeftRadius = '0';
-                    } else if (el == children[children.length - 1]) {
-                        answerContent.style.borderBottomLeftRadius = '0';
-                    }
-
-                    //Remove wrong selector from content box if ID of selected element according to random ID generate
-                    if (answerContent.classList.contains('answer-content_wrong')) {
-                        answerContent.classList.remove('answer-content_wrong');
-                    }
-
-                    //Remove resize button selecttor from list item if ID fof selected element according to random ID generate
-                    for (let i = 1; i < children.length; i++) {
-                        if (children[i].classList.contains('answer-menu__item_wrong')) {
-                            children[i].classList.remove('answer-menu__item_size-m');
-                        }
-                    }
-                    el.classList.add('answer-menu__item_size-m');
-                    el.classList.add('answer-menu__item_success');
-                    answerContent.classList.add('answer-content_success');
+                    this.sound.endPlay();
                     this.complete = true;
-                    this.success.play();
-                } else {
+                }
+                el.classList.add('answer-menu__item_success');
+
+                if (answerContent.classList.contains('answer-content_wrong')) {
+                    answerContent.classList.remove('answer-content_wrong');
+                }
+                answerContent.classList.add('answer-content_success');
+            } else {
+                if (this.complete == false) {
 
                     //Check array on bad (wrong) ID if previously selected
-                    const badId = this.wrongAnswers.includes(dataId);
-                    if (badId == false) {
-                        this.currentScore -= 1;
-                        el.classList.add('answer-menu__item_size-m');
-                        el.classList.add('answer-menu__item_wrong');
-                        answerContent.classList.add('answer-content_wrong');
+                    const wrongAnswer = this.wrongAnswers.includes(dataId);
+                    if (wrongAnswer == false) {
                         this.wrong.play();
+                        this.currentScore -= 1;
+
+                        el.classList.add('answer-menu__item_wrong');
+
                         const answerQuiz = document.querySelector('.answer-quiz');
                         answerQuiz.classList.add('answer-quiz_shake');
-
                         //Remove class shake animation
                         answerQuiz.addEventListener('animationend', () => {
                             answerQuiz.classList.remove('answer-quiz_shake');
@@ -162,16 +143,24 @@ export default class Quiz {
                         //Push bad (wrong) ID in array
                         this.wrongAnswers.push(dataId);
                     }
-                }
-            } else {
-                if (dataId == this.currentId) {
-                    answerContent.classList.remove('answer-content_wrong');
-                    answerContent.classList.add('answer-content_success');
-                } else {
-                    answerContent.classList.remove('answer-content_success');
+
                     answerContent.classList.add('answer-content_wrong');
+                    
+                } else {
+                    
+                    if (answerContent.classList.contains('answer-content_success')) {
+                        answerContent.classList.remove('answer-content_success');
+                    }
+
+                    if (el.classList.contains('answer-menu__item_wrong')) {
+                        answerContent.classList.add('answer-content_wrong');
+                    } else {
+                        answerContent.classList.remove('answer-content_wrong');
+                    }
                 }
             }
+
+            el.classList.add('answer-menu__item_active');
         }
     }
 

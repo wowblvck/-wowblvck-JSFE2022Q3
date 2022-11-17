@@ -1,13 +1,15 @@
 @forward './__item/answer-menu__item';
+
 @forward './__item/_wrong/answer-menu__item_wrong';
 @forward './__item/_success/answer-menu__item_success';
-@forward './__item/_size-m/answer-menu__item_size-m';
+@forward './__item/_active/answer-menu__item_active';
 
 .answer-menu {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     list-style-type: none;
     padding: 0;
-    row-gap: 20px;
     margin: 0;
+    box-sizing: border-box;
 }

@@ -24,12 +24,18 @@ export default () => `
                 <p class="player-quiz__title">Прослушайте плеер и выберите птицу из списка:</p>
                 <div class="player-control player-quiz__player-control">
                     <button class="player-control__state"></button>
-                    <input 
-                        type="range" 
-                        class="player-control__bar"
-                        min="0"
-                        value="0"
-                    />
+                    <div class="player-progress">
+                        <input 
+                            type="range" 
+                            class="player-control__bar"
+                            min="0"
+                            value="0"
+                        />
+                        <div class="player-time">
+                            <p class="player-time__current">00:00</p>
+                            <p class="player-time__duration">--:--</p>
+                    </div>
+                    </div>
                 </div>
             </div>
             <div class="answer-quiz content-quiz__answer-quiz">

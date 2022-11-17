@@ -35,9 +35,16 @@ export default class Sound {
     }
 
     endPlay = () => {
+        this.song.pause();
         this.isPlaying = false;
+        this.song.currentTime = 0;
         const btnPlay = document.querySelector('.player-control__state');
         btnPlay.classList.remove('player-control__state_pause');
+        const playerBar = document.querySelector('.player-control__bar');
+        playerBar.min = 0;
+        playerBar.value = this.song.currentTime;
+        playerBar.style.setProperty('--min', playerBar.min);
+        playerBar.style.setProperty('--value', playerBar.value);
         clearInterval(this.interval);
     }
 

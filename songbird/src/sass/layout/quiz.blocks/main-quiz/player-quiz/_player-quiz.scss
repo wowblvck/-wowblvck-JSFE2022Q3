@@ -4,6 +4,6 @@
 .player-quiz {
     display: flex;
     flex-direction: column;
-    width: 821px;
-    align-self: end;
+    align-items: flex-end;
+    padding-left: 384px;
 }

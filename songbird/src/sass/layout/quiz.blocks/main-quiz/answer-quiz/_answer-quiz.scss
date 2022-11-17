@@ -9,5 +9,6 @@
     border-radius: 30px;
     padding: 64px 44px 69px;
     box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: 450px 1fr;
 }
