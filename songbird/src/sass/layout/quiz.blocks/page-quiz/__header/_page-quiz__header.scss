@@ -1,4 +1,5 @@
+@use '../../../../modules/mixins' as mix;
+
 .page-quiz__header {
-    margin-top: 47px;
-    margin-right: 135px;
+    margin: 30px auto 0;
 }

@@ -1,0 +1,17 @@
+@use '../../../../../modules/mixins' as mix;
+
+.content-info__info {
+    margin-left: 40px;
+
+    @include mix.responsive(mobile) {
+        margin-left: 0;
+    }
+
+    @include mix.responsive(tablet-s) {
+        margin-left: 0;
+    }
+
+    @include mix.responsive(tablet-m) {
+        margin-left: 0;
+    }
+}

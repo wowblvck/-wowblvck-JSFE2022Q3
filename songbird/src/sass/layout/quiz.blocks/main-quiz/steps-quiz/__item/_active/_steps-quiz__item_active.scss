@@ -1,7 +1,7 @@
 @use '../../../../../../modules/colors' as *;
 
 .steps-quiz__item_active {
-    border-radius: 50px;
     background: #fff;
     color: $main-gray;
+    transition: all .5s;
 }

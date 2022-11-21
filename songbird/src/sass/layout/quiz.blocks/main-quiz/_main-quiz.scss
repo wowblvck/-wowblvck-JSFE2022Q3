@@ -12,10 +12,16 @@
 
 @forward './player-control/player-control';
 
+@forward './player-time/player-time';
+
+@forward './player-progress/player-progress';
+
 @forward './answer-quiz/answer-quiz';
 
 @forward './answer-menu/answer-menu';
 
+@forward './content-info/content-info';
+@forward './info/info';
 
 @forward './answer-content/answer-content';
 @forward './answer-content/_wrong/answer-content_wrong';
@@ -29,8 +35,33 @@
 
 @forward './next-level/next-level';
 
+@use '../../../modules/mixins' as mix;
+
+@forward './__content-quiz/main-quiz__content-quiz';
+
 .main-quiz {
-    display: flex;
-    padding: 0 60px;
+    display: grid;
+    width: 1360px;
+    margin: 0 auto;
     column-gap: 20px;
+    grid-template-columns: 1fr 5fr;
+
+    @include mix.responsive(mobile) {
+        grid-template-columns: 1fr;
+        width: 280px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        grid-template-columns: 1fr;
+        width: 580px;
+        margin-bottom: 40px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 850px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        width: 1000px;
+    }
 }

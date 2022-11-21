@@ -3,3 +3,28 @@
     font-size: $font-size;
     font-weight: $font-weight;
 }
+
+$desktop: 1920px;
+$desktop-s: 1200px;
+
+$tablet-m: 960px;
+$tablet-s: 640px;
+$mobile: 320px;
+
+@mixin responsive($media) {
+    @if $media == desktop {
+        @media only screen and (min-width: ($desktop)) { @content; }
+    }
+    @else if $media == desktop-s {
+        @media only screen and (min-width: ($desktop-s)) and (max-width: ($desktop - 1px)) { @content; }
+    }
+    @else if $media == tablet-m {
+        @media only screen and (min-width: ($tablet-m)) and (max-width: ($desktop-s - 1px)) { @content; }
+    }
+    @else if $media == tablet-s {
+        @media only screen and (min-width: ($tablet-s)) and (max-width: ($tablet-m - 1px)) { @content; }
+    }
+    @else if $media == mobile {
+        @media only screen and (min-width: ($mobile)) and (max-width: ($tablet-s - 1px)) { @content; }
+    }
+}

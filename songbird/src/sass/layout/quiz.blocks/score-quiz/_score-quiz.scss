@@ -3,8 +3,25 @@
 @forward './__count/score-quiz__count';
 
 .score-quiz {
-    @include mix.font('Rubik One', 50px, 400);
+    @include mix.font('Rubik One', 40px, 400);
     color: #e0b67c;
     margin: 0;
     text-align: right;
+
+    @include mix.responsive(mobile) {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    @include mix.responsive(tablet-s) {
+        text-align: center;
+    }
+
+    @include mix.responsive(tablet-m) {
+        font-size: 32px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        font-size: 28px;
+    }
 }

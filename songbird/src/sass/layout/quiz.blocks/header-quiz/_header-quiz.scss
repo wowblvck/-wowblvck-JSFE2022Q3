@@ -1,0 +1,22 @@
+@use '../../../modules/mixins' as mix;
+@forward './__score/header-quiz__score';
+
+.header-quiz {
+    width: 1360px;
+
+    @include mix.responsive(mobile) {
+        width: 100%;
+    }
+
+    @include mix.responsive(tablet-s) {
+        width: 100%;
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 850px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        width: 1000px;
+    }
+}

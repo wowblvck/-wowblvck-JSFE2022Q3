@@ -1,5 +1,5 @@
 import birds from '../data/birds';
-import { getArrayElementById } from '../utilites/functions';
+import { getArrayElementById, formatTime } from '../utilites/functions';
 
 export default class Sound {
     constructor(level, id) {
@@ -21,17 +21,19 @@ export default class Sound {
 
     eventHandlers = () => {
         const btnPlay = document.querySelector('.player-control__state');
-        btnPlay.addEventListener('click', (e) => this.playPause(e));
+        btnPlay.addEventListener('click', this.playPause);
 
         const playerBar = document.querySelector('.player-control__bar');
         playerBar.addEventListener('input', (e) => this.changeProgressBar(e));
 
         this.song.addEventListener('ended', this.endPlay);
     }
-
+    
     changeProgressBar = (e) => {
         this.song.currentTime = e.target.value;
         e.target.style.setProperty('--value', e.target.value);
+        const currentTime = document.querySelector('.player-time__current');
+        currentTime.innerHTML = (formatTime(Math.floor(this.song.currentTime)));
     }
 
     endPlay = () => {
@@ -45,6 +47,10 @@ export default class Sound {
         playerBar.value = this.song.currentTime;
         playerBar.style.setProperty('--min', playerBar.min);
         playerBar.style.setProperty('--value', playerBar.value);
+        const currentTime = document.querySelector('.player-time__current');
+        currentTime.innerHTML = '0:00';
+        const duration = document.querySelector('.player-time__duration');
+        duration.innerHTML = '--:--';
         clearInterval(this.interval);
     }
 
@@ -53,6 +59,18 @@ export default class Sound {
         playerBar.min = 0;
         playerBar.max = this.song.duration;
         playerBar.value = this.song.currentTime;
+
+        const currentTime = document.querySelector('.player-time__current');
+        currentTime.innerHTML = (formatTime(Math.floor(this.song.currentTime)));
+
+        const duration = document.querySelector('.player-time__duration');
+        duration.innerHTML = (formatTime(Math.floor(this.song.duration)));
+        if (duration.innerHTML === '--:--') {
+            duration.innerHTML = '0:00'; 
+        } else {
+            duration.innerHTML = (formatTime(Math.floor(this.song.duration)));
+        }
+
         playerBar.style.setProperty('--min', playerBar.min);
         playerBar.style.setProperty('--max', playerBar.max);
         playerBar.style.setProperty('--value', playerBar.value);

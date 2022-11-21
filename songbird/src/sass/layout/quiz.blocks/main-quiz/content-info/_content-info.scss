@@ -1,0 +1,22 @@
+@forward './__player-quiz/content-info__player-quiz';
+@forward './__info/content-info__info';
+
+@use '../../../../modules/mixins' as mix;
+
+.content-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include mix.responsive(mobile) {
+        flex-direction: column;
+    }
+
+    @include mix.responsive(tablet-s) {
+        flex-direction: column;
+    }
+
+    @include mix.responsive(tablet-m) {
+        flex-direction: column;
+    }
+}

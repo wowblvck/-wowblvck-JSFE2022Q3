@@ -18,30 +18,34 @@ export default () => `
             </ul>
             <h2 class="match-quiz sidebox-quiz__match">Новая игра</h2>
         </section>
-        <section class="content-quiz">
-            <img class="content-quiz__image" src=${defaultBirdImage} alt="Default Bird Image">
-            <div class="player-quiz content-quiz__player-quiz">
-                <p class="player-quiz__title">Прослушайте плеер и выберите птицу из списка:</p>
-                <div class="player-control player-quiz__player-control">
-                    <button class="player-control__state"></button>
-                    <div class="player-progress">
-                        <input 
-                            type="range" 
-                            class="player-control__bar"
-                            min="0"
-                            value="0"
-                        />
-                        <div class="player-time">
-                            <p class="player-time__current">00:00</p>
-                            <p class="player-time__duration">--:--</p>
-                    </div>
+        <section class="content-quiz main-quiz__content-quiz">
+            <div class="content-info">
+                <div class="info content-info__info">
+                    <img class="info__image" src=${defaultBirdImage} alt="Default Bird Image">
+                    <p class="info__title">*****</p>
+                </div>
+                <div class="player-quiz content-info__player-quiz">
+                    <p class="player-quiz__title">Прослушайте плеер и выберите птицу из списка:</p>
+                    <div class="player-control player-quiz__player-control">
+                        <button class="player-control__state"></button>
+                        <div class="player-progress player-control__player-progress">
+                            <input 
+                                type="range" 
+                                class="player-control__bar"
+                                min="0"
+                                value="0"
+                            />
+                            <div class="player-time player-progress__player-time">
+                                <p class="player-time__current">0:00</p>
+                                <p class="player-time__duration">--:--</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="answer-quiz content-quiz__answer-quiz">
-                <ul class="answer-menu">
-                </ul>
-                <div class="answer-content">
+                <ul class="answer-menu"></ul>
+                <div class="answer-content answer-quiz__answer-content">
                     <p class="answer-content__select">Послушайте плеер.<br>Выберите птицу из списка</p>
                 </div>
             </div>

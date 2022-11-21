@@ -6,12 +6,34 @@
 @forward './__select/answer-content__select';
 
 @use '../../../../modules/colors' as *;
+@use '../../../../modules/mixins' as mix;
 
 .answer-content {
-    width: 100%;
+    display: grid;
     border-radius: 30px;
-    padding: 33px 36px 56px 38px;
+    padding: 30px;
     position: relative;
     background: $main-yellow;
     box-sizing: border-box;
+    transition: all .5s;
+    grid-template-rows: 0.1fr;
+
+    @include mix.responsive(mobile) {
+        justify-items: center;
+        padding: 20px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        justify-items: center;
+        padding: 20px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        justify-items: center;
+    }
+
+    @include mix.responsive(desktop-s) {
+        padding: 20px;
+        // justify-items: center;
+    }
 }

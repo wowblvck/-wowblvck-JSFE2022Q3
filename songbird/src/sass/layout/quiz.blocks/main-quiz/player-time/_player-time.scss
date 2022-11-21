@@ -1,0 +1,7 @@
+@forward './__current/player-time__current';
+@forward './__duration/player-time__duration';
+
+.player-time {
+    display: flex;
+    justify-content: space-between;
+}

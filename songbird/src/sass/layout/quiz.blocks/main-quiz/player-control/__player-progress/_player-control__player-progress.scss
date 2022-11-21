@@ -1,0 +1,9 @@
+@use '../../../../../modules/mixins' as mix;
+
+.player-control__player-progress {
+    margin-left: 20px;
+
+    @include mix.responsive(mobile) {
+        margin-left: 20px;
+    }
+}

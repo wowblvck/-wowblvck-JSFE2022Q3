@@ -2,7 +2,26 @@
 @use '../../../../../modules/mixins' as mix;
 
 .answer-content__select {
-    @include mix.font('Rubik', 25px, 500);
+    @include mix.font('Rubik', 20px, 500);
     color: $main-blue;
     margin: 0;
+
+    @include mix.responsive(mobile) {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    @include mix.responsive(tablet-s) {
+        text-align: center;
+    }
+
+    @include mix.responsive(tablet-m) {
+        text-align: center;
+    }
+
+    @include mix.responsive(desktop-s) {
+        font-size: 16px;
+        justify-self: flex-start;
+        text-align: start;
+    }
 }

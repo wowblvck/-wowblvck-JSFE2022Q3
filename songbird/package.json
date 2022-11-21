@@ -5,6 +5,7 @@
     "@webpack-cli/generators": "^2.5.0",
     "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
+    "browser-sync-webpack-plugin": "^2.3.0",
     "css-loader": "^6.7.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",

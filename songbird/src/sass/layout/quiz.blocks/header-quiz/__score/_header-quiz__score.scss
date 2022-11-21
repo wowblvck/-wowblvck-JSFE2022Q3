@@ -1,0 +1,13 @@
+@use '../../../../modules/mixins' as mix;
+
+.header-quiz__score {
+    margin-right: 50px;
+
+    @include mix.responsive(mobile) {
+        margin-right: 0;
+    }
+
+    @include mix.responsive(tablet-s) {
+        margin-right: 0;
+    }
+}

@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ghpages = require('gh-pages');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -18,16 +19,24 @@ const config = {
       return `${filepath}/[name][ext]`;
     }
   },
-  devServer: {
-    open: true,
-    host: "localhost",
-    hot: true,
-    port: 8080,
-  },
+  // devServer: {
+  //   open: true,
+  //   host: "localhost",
+  //   hot: true,
+  //   port: 8080,
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'index.html'),
     }),
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      proxy: 'http://localhost:3100/',
+    },
+    {
+      reload: false
+    })
   ],
   module: {
     rules: [
@@ -98,8 +107,9 @@ module.exports = () => {
 
     // ghpages.publish('dist', {
     //   dest: 'songbird',
-    //   message: 'build: songbird production'
+    //   message: 'build: songbird production (test)'
     // });
+
   } else {
     config.mode = "development";
     config.target = 'web';
