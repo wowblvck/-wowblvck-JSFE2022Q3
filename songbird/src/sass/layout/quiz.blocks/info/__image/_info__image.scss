@@ -1,0 +1,38 @@
+@use '../../../../modules/mixins' as mix;
+
+.info__image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    margin-top: -40px;
+
+    @include mix.responsive(mobile) {
+        position: static;
+        width: 150px;
+        height: 150px;
+        margin-top: 15px;
+        align-self: center;
+    }
+
+    @include mix.responsive(tablet-s) {
+        position: static;
+        width: 200px;
+        height: 200px;
+        margin-top: 30px;
+        align-self: center;
+    }
+    
+    @include mix.responsive(tablet-m) {
+        position: static;
+        width: 180px;
+        height: 180px;
+        margin-top: 30px;
+        align-self: center;
+    }
+
+    @include mix.responsive(desktop-s) {
+        width: 130px;
+        height: 130px;
+    }
+}

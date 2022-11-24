@@ -1,0 +1,21 @@
+@use '../../../../modules/mixins' as mix;
+
+.content__answer-quiz {
+    margin-top: 20px;
+
+    @include mix.responsive(mobile) {
+        margin-top: 35px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        margin-top: 30px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        margin-top: 30px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        margin-top: 20px;
+    }
+}

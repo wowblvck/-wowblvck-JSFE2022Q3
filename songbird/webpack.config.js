@@ -105,10 +105,10 @@ module.exports = () => {
       filename: '[name].[contenthash].css'
     }));
 
-    // ghpages.publish('dist', {
-    //   dest: 'songbird',
-    //   message: 'build: songbird production (test)'
-    // });
+    ghpages.publish('dist', {
+      dest: 'songbird',
+      message: 'build: songbird production (test)'
+    });
 
   } else {
     config.mode = "development";

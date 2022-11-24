@@ -1,0 +1,9 @@
+@use '../../../modules/colors' as *;
+
+@forward './__header/page__header';
+@forward './__main/page__main';
+@forward './__main-home/page__main-home';
+
+.page {
+    background: $main-blue;
+}

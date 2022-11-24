@@ -1,4 +1,33 @@
-@forward './main-quiz/main-quiz';
-@forward './page-quiz/page-quiz';
-@forward './score-quiz/score-quiz';
+@forward './answer-content/answer-content';
+@forward './answer-content/_wrong/answer-content_wrong';
+@forward './answer-content/_success/answer-content_success';
+
+@forward './answer-menu/answer-menu';
+
+@forward './answer-player/answer-player';
+
+@forward './answer-progress/answer-progress';
+
+@forward './answer-quiz/answer-quiz';
+
+@forward './answer-time/answer-time';
+
+@forward './content-info/content-info';
+
 @forward './header-quiz/header-quiz';
+
+@forward './info/info';
+
+@forward './match-quiz/match-quiz';
+
+@forward './next-level/next-level';
+
+@forward './player-control/player-control';
+
+@forward './player-progress/player-progress';
+
+@forward './player-quiz/player-quiz';
+
+@forward './player-time/player-time';
+
+@forward './score-quiz/score-quiz';

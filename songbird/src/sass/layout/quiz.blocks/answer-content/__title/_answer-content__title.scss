@@ -1,0 +1,25 @@
+@use '../../../../modules/mixins' as mix;
+
+.answer-content__title {
+    @include mix.font('Rubik One', 35px, 400);
+    color: #fff;
+    margin: 0;
+
+    @include mix.responsive(mobile) {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        margin-top: 10px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        margin-top: 10px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,9 @@
+@use '../../../../modules/mixins' as mix;
+
+.player-progress__player-time {
+    margin-top: 7px;
+
+    @include mix.responsive(mobile) {
+        margin-top: 5px;
+    }
+}

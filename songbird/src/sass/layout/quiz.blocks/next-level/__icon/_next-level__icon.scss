@@ -1,0 +1,27 @@
+@use '../../../../modules/mixins' as mix;
+
+.next-level__icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 11px;
+
+    @include mix.responsive(mobile) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        width: 34px;
+        height: 34px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 32px;
+        height: 32px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        width: 28px;
+        height: 28px;
+    }
+}

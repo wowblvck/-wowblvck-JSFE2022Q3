@@ -1,0 +1,29 @@
+@use '../../../../modules/mixins' as mix;
+
+.content-gallery__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 3px solid #FFC87B;
+    box-sizing: border-box;
+
+    @include mix.responsive(mobile) {
+        width: 70px;
+        height: 70px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        width: 150px;
+        height: 150px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 120px;
+        height: 120px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        width: 100px;
+        height: 100px;
+    }
+}

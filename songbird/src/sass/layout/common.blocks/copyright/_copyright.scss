@@ -1,0 +1,19 @@
+@forward './__github-link/copyright__github-link';
+@forward './__school-img/copyright__school-img';
+@forward './__school-link/copyright__school-link';
+@forward './__year/copyright__year';
+@forward './__github-img/copyright__github-img';
+
+@use '../../../modules/mixins' as mix;
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include mix.responsive(mobile) {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 25px;
+    }
+}

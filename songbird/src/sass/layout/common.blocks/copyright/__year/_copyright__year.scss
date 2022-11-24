@@ -1,0 +1,14 @@
+@use '../../../../modules/mixins' as mix;
+@use '../../../../modules/colors' as *;
+
+.copyright__year {
+    margin: 0;
+
+    @include mix.font('Cherry Bomb', 45px, 400);
+
+    color: $main-yellow;
+
+    @include mix.responsive(tablet-m) {
+        font-size: 35px;
+    }
+}

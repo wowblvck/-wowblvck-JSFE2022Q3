@@ -1,0 +1,8 @@
+@forward './__logo/sidebox__logo';
+@forward './__nav/sidebox__nav';
+@forward './__match/sidebox__match';
+
+.sidebox {
+    display: flex;
+    flex-direction: column;
+}

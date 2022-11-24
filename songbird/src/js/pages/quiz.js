@@ -2,23 +2,25 @@ import nextLevelIcon from '../../assets/icons/next-level.svg';
 import defaultBirdImage from '../../assets/images/default-bird.png';
 
 export default () => `
-    <header class="header-quiz page-quiz__header">
+    <header class="header-quiz page__header">
         <p class="score-quiz header-quiz__score">Счет:<span class="score-quiz__count">0</span></p>
     </header>
-    <main class="main-quiz page-quiz__main">
-        <section class="sidebox-quiz">
-            <h1 class="logo sidebox-quiz__logo">SongBird</h1>
-            <ul class="steps-quiz sidebox-quiz__steps">
-                <li class="steps-quiz__item steps-quiz__item_active">Разминка</li>
-                <li class="steps-quiz__item">Воробьиные</li>
-                <li class="steps-quiz__item">Лестные птицы</li>
-                <li class="steps-quiz__item">Певчие птицы</li>
-                <li class="steps-quiz__item">Хищные птицы</li>
-                <li class="steps-quiz__item">Морские птицы</li>
-            </ul>
-            <h2 class="match-quiz sidebox-quiz__match">Новая игра</h2>
+    <main class="main page__main">
+        <section class="sidebox">
+            <h1 class="logo sidebox__logo"><a href="/" class="logo__link" data-link>SongBird</a></h1>
+            <nav class="nav sidebox__nav">
+                <ul class="menu menu_quiz">
+                    <li class="menu__item menu__item_active">Разминка</li>
+                    <li class="menu__item">Воробьиные</li>
+                    <li class="menu__item">Лестные птицы</li>
+                    <li class="menu__item">Певчие птицы</li>
+                    <li class="menu__item">Хищные птицы</li>
+                    <li class="menu__item">Морские птицы</li>
+                </ul>
+            </nav>
+            <h2 class="match-quiz sidebox__match">Новая игра</h2>
         </section>
-        <section class="content-quiz main-quiz__content-quiz">
+        <section class="content main__content">
             <div class="content-info">
                 <div class="info content-info__info">
                     <img class="info__image" src=${defaultBirdImage} alt="Default Bird Image">
@@ -43,13 +45,13 @@ export default () => `
                     </div>
                 </div>
             </div>
-            <div class="answer-quiz content-quiz__answer-quiz">
+            <div class="answer-quiz content__answer-quiz">
                 <ul class="answer-menu"></ul>
                 <div class="answer-content answer-quiz__answer-content">
                     <p class="answer-content__select">Послушайте плеер.<br>Выберите птицу из списка</p>
                 </div>
             </div>
-            <div class="next-level content-quiz__next-level">
+            <div class="next-level content__next-level">
                 <p class="next-level__title">Следующий уровень</p>
                 <img class="next-level__icon" src=${nextLevelIcon} alt="Next Level Icon">
             </div>

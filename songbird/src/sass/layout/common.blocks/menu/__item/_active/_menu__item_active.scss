@@ -1,0 +1,7 @@
+@use '../../../../../modules/colors' as *;
+
+.menu__item_active {
+    background: #fff;
+    color: $main-gray;
+    transition: all .5s;
+}

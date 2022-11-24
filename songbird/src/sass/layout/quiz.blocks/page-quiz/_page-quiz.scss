@@ -1,8 +1,0 @@
-@use '../../../modules/colors' as *;
-
-@forward './__header/page-quiz__header';
-@forward './__main/page-quiz__main';
-
-.page-quiz {
-    background: $main-blue;
-}

@@ -1,0 +1,25 @@
+@use '../../../../modules/mixins' as mix;
+@use '../../../../modules/colors' as *;
+
+.content-descr__about {
+    @include mix.font('Rubik', 18px, 500);
+    color: $main-white;
+    line-height: 30px;
+    margin: 0;
+    margin-top: 15px;
+
+    @include mix.responsive(desktop-s) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    @include mix.responsive(mobile) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

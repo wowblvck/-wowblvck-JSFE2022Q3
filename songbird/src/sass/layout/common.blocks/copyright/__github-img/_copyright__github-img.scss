@@ -1,0 +1,15 @@
+@use '../../../../modules/mixins' as mix;
+
+.copyright__github-img {
+    width: 100px;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 80px;
+    }
+}

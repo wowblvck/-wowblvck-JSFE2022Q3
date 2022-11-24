@@ -1,0 +1,33 @@
+@forward './__image/content-gallery__image';
+@forward './__item/content-gallery__item';
+
+@use '../../../modules/mixins' as mix;
+
+.content-gallery {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mix.responsive(mobile) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    @include mix.responsive(desktop-s) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    @include mix.responsive(tablet-m) {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    @include mix.responsive(tablet-s) {
+        flex-direction: row;
+        align-items: center;
+    }
+}

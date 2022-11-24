@@ -1,0 +1,13 @@
+@use '../../../../modules/mixins' as mix;
+
+.content-descr__copyright {
+    margin-top: 20px;
+
+    @include mix.responsive(tablet-m) {
+        margin-top: 10px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        margin-top: 20px;
+    }
+}

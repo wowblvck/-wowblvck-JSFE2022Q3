@@ -1,0 +1,6 @@
+@use '../../../../../modules/colors' as *;
+
+.answer-menu__item_success {
+    color: #fff;
+    background: $main-green;
+}

@@ -1,0 +1,13 @@
+@use '../../../../modules/mixins' as mix;
+
+.player-quiz__player-control {
+    margin-top: 20px;
+
+    @include mix.responsive(mobile) {
+        margin-top: 20px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        margin-top: 15px;
+    }
+}

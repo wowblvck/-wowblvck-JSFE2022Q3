@@ -1,0 +1,36 @@
+@use '../../../../modules/mixins' as mix;
+
+.content-gallery__item {
+    line-height: 0;
+    &:nth-child(n+2) {
+        margin-top: -80px;
+    }
+
+    @include mix.responsive(mobile) {
+        &:nth-child(n+2) {
+            margin-top: 0;
+            margin-left: -30px;
+        }
+    }
+
+    @include mix.responsive(desktop-s) {
+        &:nth-child(n+2) {
+            margin-top: 0;
+            margin-left: -30px;
+        }
+    }
+
+    @include mix.responsive(tablet-m) {
+        &:nth-child(n+2) {
+            margin-top: 0;
+            margin-left: -30px;
+        }
+    }
+
+    @include mix.responsive(tablet-s) {
+        &:nth-child(n+2) {
+            margin-top: 0;
+            margin-left: -30px;
+        }
+    }
+}

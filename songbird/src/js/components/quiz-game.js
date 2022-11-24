@@ -180,18 +180,18 @@ export default class Quiz {
                 const newGame = document.querySelector('.match-quiz');
                 newGame.removeEventListener('click', this.new);
 
-                const stepsQuiz = document.querySelector('.steps-quiz');
+                const stepsQuiz = document.querySelector('.menu_quiz');
 
                 //Clean #text from node
                 clean(stepsQuiz);
 
                 stepsQuiz.childNodes.forEach((elem, i) => {
-                    if (elem.classList.contains('steps-quiz__item_active')) {
-                        elem.classList.remove('steps-quiz__item_active');
+                    if (elem.classList.contains('menu__item_active')) {
+                        elem.classList.remove('menu__item_active');
                     }
 
                     if (this.currentLevel == i) {
-                        elem.classList.add('steps-quiz__item_active');
+                        elem.classList.add('menu__item_active');
                     }
                 })
 

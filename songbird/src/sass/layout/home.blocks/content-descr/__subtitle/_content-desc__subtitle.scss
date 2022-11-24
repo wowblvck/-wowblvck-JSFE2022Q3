@@ -1,0 +1,35 @@
+@use '../../../../modules/colors' as *;
+@use '../../../../modules/mixins' as mix;
+
+.content-descr__subtitle {
+    @include mix.font('Rubik One', 24px, 400);
+    color: $main-yellow;
+    margin: 0;
+    margin-top: 32px;
+    line-height: 32px;
+
+    @include mix.responsive(desktop-s) {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        font-size: 16px;
+        margin-top: 15px;
+        line-height: 24px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        font-size: 22px;
+        margin-top: 15px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    @include mix.responsive(mobile) {
+        font-size: 16px;
+        margin-top: 15px;
+        line-height: 26px;
+        text-align: center;
+    }
+}

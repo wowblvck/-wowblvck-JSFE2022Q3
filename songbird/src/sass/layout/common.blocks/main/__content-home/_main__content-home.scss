@@ -1,0 +1,11 @@
+@use '../../../../modules/mixins' as mix;
+
+.main__content-home {
+    @include mix.responsive(desktop-s) {
+        margin-top: 0;
+    }
+
+    @include mix.responsive(tablet-m) {
+        margin-top: 0;
+    }
+}

@@ -1,8 +1,0 @@
-@use '../../../../../modules/colors'as *;
-@use '../../../../../modules/mixins'as mix;
-
-.answer-time__duration {
-    @include mix.font('Inter', 15px, 400);
-    margin: 0;
-    color: $main-white;
-}

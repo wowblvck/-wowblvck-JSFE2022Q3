@@ -1,0 +1,11 @@
+@use '../../../../modules/mixins' as mix;
+
+.sidebox__logo {
+    margin: 0;
+    margin-top: -23px;
+    align-self: center;
+
+    @include mix.responsive(mobile) {
+        margin-top: 0;
+    }
+}

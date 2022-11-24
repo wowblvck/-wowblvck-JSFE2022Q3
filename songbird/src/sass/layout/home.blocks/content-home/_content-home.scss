@@ -1,0 +1,28 @@
+@use '../../../modules/mixins' as mix;
+
+.content-home {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding: 52px 45px;
+    column-gap: 100px;
+
+    @include mix.responsive(desktop-s) {
+        grid-template-columns: 1fr;
+        padding: 35px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    @include mix.responsive(mobile) {
+        grid-template-columns: 1fr;
+        padding: 25px 15px;
+    }
+}

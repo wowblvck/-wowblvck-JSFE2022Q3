@@ -1,0 +1,32 @@
+@forward './__content/main__content';
+@forward './__content-home/main__content-home';
+
+@use '../../../modules/mixins' as mix;
+
+.main {
+    display: grid;
+    width: 1360px;
+    margin: 0 auto;
+    column-gap: 20px;
+    grid-template-columns: 1fr 5fr;
+
+    @include mix.responsive(mobile) {
+        grid-template-columns: 1fr;
+        margin-bottom: 30px;
+        width: 280px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        grid-template-columns: 1fr;
+        width: 580px;
+        margin-bottom: 40px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 850px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        width: 1000px;
+    }
+}

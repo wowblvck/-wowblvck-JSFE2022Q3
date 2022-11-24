@@ -1,0 +1,46 @@
+@use '../../../../modules/mixins' as mix;
+@use '../../../../modules/colors' as *;
+
+.answer-menu__item {
+    @include mix.font('Rubik One', 24px, 400);
+    background: $main-yellow;
+    color: $main-blue;
+    width: 280px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+    span {
+        transition: all .3s;
+    }
+    &:hover {
+        span {
+            transform: scale(1.2);
+        }
+    }
+
+    @include mix.responsive(mobile) {
+        font-size: 16px;
+        width: 175px;
+        height: 50px;
+        border-radius: 24px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        width: 270px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        width: 250px;
+    }
+
+    @include mix.responsive(desktop-s) {
+        font-size: 18px;
+        width: 200px;
+        height: 35px;
+    }
+}
