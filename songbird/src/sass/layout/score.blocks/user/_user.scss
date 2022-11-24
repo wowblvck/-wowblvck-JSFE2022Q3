@@ -1,0 +1,24 @@
+@forward './__name/user__name';
+
+@use '../../../modules/mixins' as mix;
+
+.user {
+    display: flex;
+    flex-direction: column;
+
+    @include mix.responsive(desktop-s) {
+        margin-top: 20px;
+    }
+
+    @include mix.responsive(tablet-m) {
+        margin-top: 20px;
+    }
+
+    @include mix.responsive(tablet-s) {
+        margin-top: 20px;
+    }
+
+    @include mix.responsive(mobile) {
+        margin-top: 20px;
+    }
+}

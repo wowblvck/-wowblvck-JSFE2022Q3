@@ -16,7 +16,8 @@ import defaultBirdImage from '../../assets/images/default-bird.png';
 
 const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
-let maxScore = 0;
+import { router } from './route';
+
 export default class Quiz {
 
     constructor(level) {
@@ -94,7 +95,7 @@ export default class Quiz {
         infoImg.src = `${defaultBirdImage}`;
 
         //If level equality last, change text in button 'Next Level'
-        if (this.currentLevel == 5) {
+        if (this.currentLevel == birds.length - 1) {
             nextLevel.replaceWith(nextLevel.cloneNode(false));
 
             nextLevel = document.querySelector('.next-level');
@@ -121,7 +122,7 @@ export default class Quiz {
     new = () => {
         this.currentLevel = -1;
         this.newGame = true;
-        maxScore = 0;
+        localStorage.setItem('Max', JSON.stringify(0));
 
         if (this.lastGame == true) {
             const nextLevel = document.querySelector('.next-level');
@@ -141,6 +142,14 @@ export default class Quiz {
     }
 
     next = () => {
+        if(this.complete == true && this.lastGame == true) {
+            let allGame = JSON.parse(localStorage.getItem('All'));
+            allGame += 1;
+            localStorage.setItem('All', JSON.stringify(allGame));
+            history.pushState("", "", "/score");
+            router();
+        }
+
         if ((this.complete == true && this.lastGame == false) || this.newGame == true) {
             this.currentLevel += 1;
             if (this.currentLevel < birds.length) {
@@ -272,7 +281,10 @@ export default class Quiz {
                     if (this.currentScore < 1) this.currentScore = 0;
 
                     //Update score counter
+                    let maxScore = JSON.parse(localStorage.getItem('Max'));
                     maxScore += this.currentScore;
+                    localStorage.setItem('Max', JSON.stringify(maxScore));
+                    
                     const scoreCount = document.querySelector('.score-quiz__count');
                     scoreCount.innerHTML = `${this.getScore()}`;
 
@@ -286,6 +298,10 @@ export default class Quiz {
 
                     const infoImg = document.querySelector('.info__image');
                     infoImg.src = element.image;
+
+                    let successAnsw = JSON.parse(localStorage.getItem('Success'));
+                    successAnsw += 1;
+                    localStorage.setItem('Success', JSON.stringify(successAnsw));
 
                     //End play sound
                     this.sound.endPlay();
@@ -305,6 +321,10 @@ export default class Quiz {
                     if (wrongAnswer == false) {
                         this.wrong.play();
                         this.currentScore -= 1;
+
+                        let wrongAnsw = JSON.parse(localStorage.getItem('Wrong'));
+                        wrongAnsw += 1;
+                        localStorage.setItem('Wrong', JSON.stringify(wrongAnsw));
 
                         el.classList.add('answer-menu__item_wrong');
 
@@ -339,7 +359,7 @@ export default class Quiz {
         }
     }
 
-    getScore = () => maxScore;
+    getScore = () => localStorage.getItem('Max');
 
     getElementById = () => this.currentId;
 

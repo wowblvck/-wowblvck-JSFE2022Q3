@@ -12,14 +12,30 @@ class Application {
     
     constructor() {
         this.routing();
+        this.default();
     }
 
     routing = () => {
         window.addEventListener("popstate", router);
         window.addEventListener("DOMContentLoaded", router);
     }
+
+    default = () => {
+        const allCount = JSON.parse(localStorage.getItem('All'));
+        if (!allCount) {
+            localStorage.setItem('All', JSON.stringify(0));
+        }
+
+        const successAnsw = JSON.parse(localStorage.getItem('Success'));
+        if (!successAnsw) {
+            localStorage.setItem('Success', JSON.stringify(0));
+        }
+        
+        const wrongAnsw = JSON.parse(localStorage.getItem('Wrong'));
+        if (!wrongAnsw) {
+            localStorage.setItem('Wrong', JSON.stringify(0));
+        }
+    }
 }
 
 new Application();
-
-// alert("Приветствую тебя Студент. Я не успел доделать все вовремя, но надеюсь, что ты с пониманием отнесешься. Если есть возможность, и оставь свои данные, чтобы я мог тебе написать. Спасибо. Мой Discord: Indar Basto#4840, Telegram: @wowblvck.");

@@ -4,6 +4,8 @@ import score from "../pages/score";
 
 import Quiz from '../components/quiz-game';
 
+import Score from '../components/quiz-score';
+
 export const routes = {
     "/": { name: "home", title: "Добро пожаловать", render: home },
     "/quiz": { name: "quiz", title: "Викторина", render: quiz },
@@ -19,7 +21,10 @@ export const router = () => {
         document.body.classList.add(`page`);
 
         if (view.name === 'quiz') {
+            localStorage.setItem('Max', JSON.stringify(0));
             new Quiz(0);
+        } else if (view.name === 'score') {
+            new Score;
         }
 
     } else {

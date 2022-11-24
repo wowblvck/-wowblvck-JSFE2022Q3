@@ -1,0 +1,26 @@
+@use '../../../../modules/mixins' as mix;
+
+.user__name {
+    @include mix.font('Rubik One', 40px, 400);
+    color: #ffd397;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    @include mix.responsive(tablet-m) {
+        font-size: 35px;
+    }
+
+    @include mix.responsive(mobile) {
+        font-size: 20px;
+    }
+
+    &:active {
+        border: none;
+    }
+
+    &::placeholder {
+        color: #ffd397;
+        opacity: .5;
+    }
+}

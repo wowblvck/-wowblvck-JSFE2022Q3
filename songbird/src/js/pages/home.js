@@ -14,7 +14,7 @@ export default () => `
                 <ul class="menu menu_home">
                     <li class="menu__item menu__item_active">Главная</li>
                     <li class="menu__item"><a class="menu__link" href="/quiz" data-link>Начать игру</a></li>
-                    <li class="menu__item">Результаты</li>
+                    <li class="menu__item"><a class="menu__link" href="/score" data-link>Результаты</a></li>
                 </ul>
             </nav>
         </section>
