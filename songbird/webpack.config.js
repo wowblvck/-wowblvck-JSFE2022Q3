@@ -107,7 +107,7 @@ module.exports = () => {
 
     ghpages.publish('dist', {
       dest: 'songbird',
-      message: 'build: songbird production (test)'
+      message: 'build: songbird production'
     });
 
   } else {
