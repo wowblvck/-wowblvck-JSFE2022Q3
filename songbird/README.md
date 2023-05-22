@@ -17,7 +17,7 @@ Used for design:
 
 ---
 
-### ✨ [Demo](https://school-record-book-rss.netlify.app/)
+### ✨ [Demo](https://elegant-crepe-918e6c.netlify.app/)
 
 ## Authors
 
