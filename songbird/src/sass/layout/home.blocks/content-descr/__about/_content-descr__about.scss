@@ -23,3 +23,7 @@
         line-height: 22px;
     }
 }
+
+.emoji {
+    @include mix.font('Noto Color Emoji', 18px, 400);
+}
